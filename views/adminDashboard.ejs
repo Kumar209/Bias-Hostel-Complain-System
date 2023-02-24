@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Font awesome cdn -->
+    <script src="https://kit.fontawesome.com/876f50f80d.js" crossorigin="anonymous"></script>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../CSS/adminDashboard.css">
+</head>
+
+<body>
+    <div class="table">
+        <div class="table_header">
+            <p>Namaste Admin!</p>
+        </div>
+
+        <div class="table_section">
+            <%if(data.length>0){%>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S No.</th>
+                            <th>Name</th>
+                            <th>Room Number</th>
+                            <th>Building</th>
+                            <th>Complain Detail</th>
+                            <th>Image</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <%data.forEach(function(item, index){ %>
+                            <tr class="clicked_tr">
+                                <td>
+                                    <%=index+1%>
+                                </td>
+                                <td>
+                                    <%=item.firstName%>
+                                        <%=item.lastName%>
+                                </td>
+                                <td>
+                                    <%=item.roomNumber%>
+                                </td>
+                                <td>
+                                    <%=item.building%>
+                                </td>
+                                <td class="complainText_td">
+                                    <%=item.complainText%>
+                                </td>
+                                <td>
+                                    <img src="/uploads/<%=item.image%>">
+                                </td>
+                                <td>
+                                    <form action="/admin/delete" method="post">
+                                        <span class="popup_btn"><i class="detail fa-solid fa-circle-info fa-lg"></i></span>
+                                        <button name="TargetToDelete" value="<%=item._id%>"><i class="fa-solid fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <%})%>
+                    </tbody>
+
+                </table>
+                <%}else{%>
+                    <div style="width: 100%; margin-top: 100px; display: flex; justify-content: center;">
+                        <h2>No Complains is Present Currently</h2>
+                    </div>
+                    <% }%>
+        </div>
+
+        <!-------------------------------- Popup Div --------------------------------->
+        
+        <div class="popup">
+            <div class="popup-inner">
+                <div class="project-popup-content">
+                    <span class="project-popup-close">
+                        <i class="fa fa-solid fa-xmark"></i>
+                      </span>
+
+                    <div class="popup-img">
+                        <img class="popup-img-inner" src="../Images/bias1.jpeg" alt="complain-img">
+                    </div>
+                    <div class="popup-detail">
+                        <h2>Complain Detail</h2>
+                        <p class="popup-detail-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium non dolorum fugit. Odio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="pagination">
+            <div><i class="fa-solid fa-angles-left"></i></div>
+            <div><i class="fa-regular fa-chevron-left"></i></div>
+            <div>1</div>
+            <div>2</div>
+            <div><i class="fa-regular fa-chevron-right"></i></div>
+            <div><i class="fa-solid fa-angles-right"></i></div>
+        </div> -->
+    </div>
+
+    <script src="/js/popup_script.js"></script>
+</body>
+
+</html>

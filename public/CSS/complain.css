@@ -1,0 +1,21 @@
+body{
+    /* background-color: blanchedalmond; */
+    background-image: url("../Images/bg1.jpg");
+}
+
+.complains{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2%;
+}
+
+.submit{
+    background-color: greenyellow;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+}

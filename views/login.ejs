@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- CSS Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+
+<body>
+    <div class="f1">
+        <form action="/login" method="post">
+            <div class="imgcontainer">
+                <img src="../Images/Birlalogo.jpg" alt="Birla Institute Of Applied Sciences" class="bias">
+                <h2>Login</h2>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Roll Number</b></label><br>
+                <input class="box" id="uname" type="text" placeholder="Enter Username" name="LoginName" required><br>
+
+                <label for="psw"><b>Password</b></label><br>
+                <input class="box" id="psw" type="password" placeholder="Enter Password" name="LoginPassword" required><br>
+
+                <button type="submtton" class="cancelbtn" name="LoginButton"> Login </button><br>
+                <!-- <button type="buw" style="text-emphasis-color: black;"><a href="#">Forget password?</a></span><br> -->
+                    <span class="psw" style="text-emphasis-color: black;"><a href="/registration">Don't have any
+                            account?</a></span>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
